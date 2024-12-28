@@ -219,8 +219,8 @@ public protocol UISwiftView {
 	func width(_ sizeConstraints: [ViewElement.Constraint]) -> [LayoutConstraint?]?
 }
 
-extension ViewColor {
-	public static func random() -> Self {
+public extension ViewColor {
+	static func random() -> Self {
 		.init(
 			red: CGFloat.random(in: 0...1),
 			green: CGFloat.random(in: 0...1),

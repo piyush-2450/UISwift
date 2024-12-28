@@ -1,5 +1,5 @@
 //
-//  ListView.swift
+//  GridView.swift
 //  UISwift
 //
 //  Created by Piyush Banerjee on 06-Mar-2022.
@@ -9,21 +9,21 @@
 // swiftlint:disable file_types_order
 #if canImport(UIKit)
 import UIKit
-public typealias ListView = UICollectionView
+public typealias GridView = UICollectionView
 #elseif os(OSX)
 import AppKit
-public typealias ListView = NSCollectionView
+public typealias GridView = NSCollectionView
 #else
 #error("Unsupported platform")
 #endif
 
 import Observe
 
-public protocol UISwiftListView: UISwiftView {
+public protocol UISwiftGridView: UISwiftView {
 	//
 }
 
-extension ListView: UISwiftListView {
+extension GridView: UISwiftGridView {
 	public enum Layout {
 		case vertical
 		case horizontal
@@ -31,10 +31,10 @@ extension ListView: UISwiftListView {
 }
 
 #if canImport(UIKit)
-extension ListView {
+public extension GridView {
 	@inlinable
-	public static func instance(_ layout: Layout) -> Self {
-		func instance<T: ListView>() -> T {
+	static func instance(_ layout: Layout) -> Self {
+		func instance<T: GridView>() -> T {
 			let flowLayout = UICollectionViewFlowLayout()
 			flowLayout.scrollDirection = layout == .vertical
 			? .vertical
@@ -59,10 +59,10 @@ extension ListView {
 #endif
 
 #if canImport(AppKit)
-extension ListView {
+public extension GridView {
 	@inlinable
-	public static func instance(_ layout: Layout) -> Self {
-		func instance<T: ListView>() -> T {
+	static func instance(_ layout: Layout) -> Self {
+		func instance<T: GridView>() -> T {
 			let flowLayout = NSCollectionViewFlowLayout()
 			flowLayout.scrollDirection = layout == .vertical
 			? .vertical

@@ -1,33 +1,41 @@
 //
-//  ListView.swift
+//  GridView.swift
 //  UISwift
 //
 //  Created by Piyush Banerjee on 06-Mar-2022.
 //  Copyright © 2022 Piyush Banerjee. All rights reserved.
 //
 
-// swiftlint:disable file_types_order
+// swiftlint:disable file_types_order one_declaration_per_file modifier_order
 #if canImport(UIKit)
 import UIKit
-public typealias ListItemView = UICollectionViewCell
+public typealias GridItemView = UICollectionViewCell
 #elseif os(OSX)
 import AppKit
-public typealias ListItemView = NSCollectionViewItem
+public typealias GridItemView = NSCollectionViewItem
 #else
 #error("Unsupported platform")
 #endif
 
 import Observe
 
-public protocol UISwiftListItemView: UISwiftView {
+public protocol UISwiftGridItemView: UISwiftView {
 	//
 }
 
-extension ListItemView: UISwiftListItemView {
+extension GridItemView: UISwiftGridItemView {
 	//
 }
 
-open class ConcreteListItemView: ListItemView {
+open class ConcreteGridItemView: GridItemView {
+	// MARK: - Internal scope
+
+	deinit {
+		//
+	}
+
+	// MARK: - Public scope
+
 #if canImport(UIKit)
 	public required init?(coder: NSCoder) {
 		super.init(coder: coder)
@@ -62,4 +70,4 @@ open class ConcreteListItemView: ListItemView {
 		//
 	}
 }
-// swiftlint:enable file_types_order
+// swiftlint:enable file_types_order one_declaration_per_file modifier_order
