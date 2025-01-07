@@ -349,7 +349,7 @@ open class BaseViewController: ViewController {
 	open override func viewDidLoad() {
 		super.viewDidLoad()
 		setupViewLayout()
-		setupDataBindings()
+		setupBindings()
 		resetState()
 	}
 
@@ -357,7 +357,7 @@ open class BaseViewController: ViewController {
 		//
 	}
 
-	open func setupDataBindings() {
+	open func setupBindings() {
 		//
 	}
 
