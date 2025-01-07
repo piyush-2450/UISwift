@@ -344,4 +344,21 @@ public extension ViewController {
 		return instance()
 	}
 }
+
+open class BaseViewController: ViewController {
+	open override func viewDidLoad() {
+		super.viewDidLoad()
+		setupViewLayout()
+		resetState()
+	}
+
+	open func setupViewLayout() {
+		//
+	}
+
+	open func resetState() {
+		//
+	}
+}
+
 // swiftlint:enable discouraged_optional_collection

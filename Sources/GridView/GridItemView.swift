@@ -27,7 +27,7 @@ extension GridItemView: UISwiftGridItemView {
 	//
 }
 
-open class ConcreteGridItemView: GridItemView {
+open class BaseGridItemView: GridItemView {
 	// MARK: - Internal scope
 
 	deinit {
